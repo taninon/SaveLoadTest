@@ -13,7 +13,7 @@ public class SaveData
 public class SaveLoadTest : MonoBehaviour
 {
 	private void Start()
-	{
+	{	
 		var SavePath = Application.persistentDataPath + "/save.bytes";
 
 		Debug.Log("path: "+SavePath);
