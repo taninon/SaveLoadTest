@@ -13,10 +13,10 @@ public class SaveData
 public class SaveLoadTest : MonoBehaviour
 {
 	private void Start()
-	{	
+	{
 		var SavePath = Application.persistentDataPath + "/save.bytes";
 
-		Debug.Log("path: "+SavePath);
+		Debug.Log("path: " + SavePath);
 
 		// iOSでは下記設定を行わないとエラーになる
 #if UNITY_IPHONE
@@ -30,6 +30,7 @@ public class SaveLoadTest : MonoBehaviour
 
 		using (FileStream fs = new FileStream(SavePath, FileMode.Create, FileAccess.Write))
 		{
+			//BinaryFormatterは.NET 5で非推奨になった
 			BinaryFormatter bf = new BinaryFormatter();
 			bf.Serialize(fs, save);
 		}
